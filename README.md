@@ -23,7 +23,7 @@ While you are away and the desktop is Locked or logged off from Remote Desktop, 
 
 # How to use
 
-Download and unzip the file.
+[Download](https://github.com/Nettention/MyWorkCam/files/503544/MyWorkCam.zip) and unzip the file.
 
 Run MyWorkCam.exe and find the tray icon, then right click on it and update your preferences.
 
