@@ -198,7 +198,7 @@ namespace MyWorkCam
             if (fasterDebugMode)
                 timer.Change(0, 1000);
             else
-                timer.Change(0, settings.saveIntervalMinutes * 60 * 1000);
+                timer.Change(0, 30 * 1000); // 30초에 한번 정도 일어나는 타이머는 시스템에 거의 영향 안 준다.
         }
 
         private void LoadConfig()
