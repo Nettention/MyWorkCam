@@ -36,6 +36,7 @@ If you want it to run automatically on Windows logon, press WinKey+R then enter 
 # Issues 
 
 For now, your screen shot will be stored in a folder in your Document folder. It cannot be changed. I will fix it later.
+
 For now, the period for screen shot is 10 minutes. It cannot be changed. I will fix it later.
 
 # About ProudNet
