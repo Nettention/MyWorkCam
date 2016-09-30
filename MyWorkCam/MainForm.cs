@@ -23,6 +23,8 @@ namespace MyWorkCam
         {
             try
             {
+                // written based on the code at http://stackoverflow.com/questions/362986/capture-the-screen-into-a-bitmap
+
                 //Create a new bitmap.
                 var bmpScreenshot = new Bitmap(Screen.PrimaryScreen.Bounds.Width,
                                                Screen.PrimaryScreen.Bounds.Height,
@@ -39,15 +41,15 @@ namespace MyWorkCam
                                             Screen.PrimaryScreen.Bounds.Size,
                                             CopyPixelOperation.SourceCopy);
 
-                // Save the screenshot to the specified path that the user has chosen.
-
-                Bitmap smallShot = new Bitmap(bmpScreenshot, new Size(100, 100));
-                bool saveIt=false;
-                for (int i = 0; i < 100; i++)
+                // check whether this captured image is valid.
+                // the screen will be complete black if the desktop is locked. then we dont have to save the screen.
+                Bitmap smallShot = new Bitmap(bmpScreenshot, new Size(100, 100)); // get small screen 
+                bool saveIt = false;
+                for (int i = 0; i < 100; i++) 
                 {
                     for (int j = 0; j < 100; j++)
                     {
-                        Color c = smallShot.GetPixel(i, j);
+                        Color c = smallShot.GetPixel(i, j); // does we have non-black pixel?
                         if (c != Color.Black)
                         {
                             saveIt = true;
@@ -58,6 +60,7 @@ namespace MyWorkCam
 
                 if (saveIt)
                 {
+                    // Save the screenshot to the specified path that the user has chosen.
                     var centerFolderName = Environment.CurrentDirectory;
                     var currTime = DateTime.Now;
                     var folderName = currTime.ToString("yyyy-MM-dd");
@@ -73,7 +76,7 @@ namespace MyWorkCam
                 }
 
             }
-            catch(Exception )
+            catch (Exception)
             {
             }
 
