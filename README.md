@@ -46,6 +46,7 @@ You'll see "Do you know ProudNet?" after you click on 'About' tray popup menu. P
 - Overcomed rare issues occuring only in Southern East countries and China. 
 - Many feaures dedicated to fastest realtime multiplay are included. 
 - AAA games including Seven Knights, Street Fighter V and Vindictus are using ProudNet.
+- Allows hybrid network topology of client-to-server and peer-to-peer networking at once.
 
 Check the website out http://www.proudnet.com for details. 
 
