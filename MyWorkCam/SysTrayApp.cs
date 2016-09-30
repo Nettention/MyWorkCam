@@ -16,7 +16,7 @@ namespace MyWorkCam
         private NotifyIcon trayIcon;
         private ContextMenu trayMenu;
 
-        SettingsForm f;
+        SettingsForm settingsForm;
         AboutForm aboutForm;
         static public SysTrayApp singleton;
 
@@ -43,7 +43,7 @@ namespace MyWorkCam
             trayIcon.ContextMenu = trayMenu;
             trayIcon.Visible = true;
 
-            f = new SettingsForm();
+            settingsForm = new SettingsForm();
             aboutForm = new AboutForm();
 
             LoadConfig();
@@ -82,7 +82,7 @@ namespace MyWorkCam
 
         void OnSettings(object sender, EventArgs e)
         {
-            f.ShowDialog();
+            settingsForm.ShowDialog();
         }
         void OnAbout(object sender, EventArgs e)
         {
@@ -196,9 +196,9 @@ namespace MyWorkCam
             });
 
             if (fasterDebugMode)
-                timer.Change(0, 1000);
+                timer.Change(1000, 1000); // 1초 정도는 기다려 주어야 window handle이 만들어지지...
             else
-                timer.Change(0, 30 * 1000); // 30초에 한번 정도 일어나는 타이머는 시스템에 거의 영향 안 준다.
+                timer.Change(1000, 30 * 1000); // 30초에 한번 정도 일어나는 타이머는 시스템에 거의 영향 안 준다.
         }
 
         private void LoadConfig()
