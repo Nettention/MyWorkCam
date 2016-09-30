@@ -20,3 +20,7 @@ Click Issues tab for details.
 # About ProudNet
 
 You'll see "Do you know ProudNet?". ProudNet is a game server and network middleware for mobile, PC and PS4 games. Many feaures dedicated to fastest realtime multiplay are included on it. Check the website out http://www.proudnet.com for details.
+
+# License
+
+LGPL.
