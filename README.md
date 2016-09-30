@@ -41,7 +41,13 @@ For now, the period for screen shot is 10 minutes. It cannot be changed. I will 
 
 # About ProudNet
 
-You'll see "Do you know ProudNet?" after you click on 'About' tray popup menu. ProudNet is a game server and network middleware for mobile, PC and PS4 games. Many feaures dedicated to fastest realtime multiplay are included on it. Check the website out http://www.proudnet.com for details.
+You'll see "Do you know ProudNet?" after you click on 'About' tray popup menu. ProudNet is a game server and network middleware for mobile, PC and PS4 games. 
+
+- Overcomed rare issues occuring only in Southern East countries and China. 
+- Many feaures dedicated to fastest realtime multiplay are included. 
+- AAA games including Seven Knights, Street Fighter V, Vindictus are used.
+
+Check the website out http://www.proudnet.com for details. 
 
 # License
 
