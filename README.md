@@ -31,7 +31,7 @@ Run MyWorkCam.exe and find the tray icon, then right click on it and update your
 
 Open the screen shot folder you have specified and recall what you have done so far. Delete them after checking them out, if you wish.
 
-If you want it to run automatically on Windows logon, open "shell:startup" on Command Line and add the Shortcut of MyWorkCam.exe.
+If you want it to run automatically on Windows logon, press WinKey+R then enter `shell:startup` on it, and add the Shortcut of MyWorkCam.exe.
 
 # Issues 
 
