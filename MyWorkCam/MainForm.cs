@@ -64,7 +64,7 @@ namespace MyWorkCam
                     var centerFolderName = Environment.CurrentDirectory;
                     var currTime = DateTime.Now;
                     var folderName = currTime.ToString("yyyy-MM-dd");
-                    var fileNamePostfix = currTime.ToString("HH-mm");
+                    var fileNamePostfix = currTime.ToString("HH-mm-ss");
                     var fileName = $"Screenshot-{fileNamePostfix}.png";
                     var savePath = Path.Combine(centerFolderName, folderName, fileName);
                     var saveFolder = Path.Combine(centerFolderName, folderName);
