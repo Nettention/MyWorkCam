@@ -12,11 +12,16 @@ using System.Windows.Forms;
 
 namespace MyWorkCam
 {
-    public partial class MainForm : Form
+
+
+    public partial class SettingsForm : Form
     {
-        public MainForm()
+        Settings settings = new Settings();
+
+        public SettingsForm()
         {
             InitializeComponent();
+            propertyGrid1.SelectedObject = settings;
         }
 
         private void startButton_Click(object sender, EventArgs e)
@@ -45,7 +50,7 @@ namespace MyWorkCam
                 // the screen will be complete black if the desktop is locked. then we dont have to save the screen.
                 Bitmap smallShot = new Bitmap(bmpScreenshot, new Size(100, 100)); // get small screen 
                 bool saveIt = false;
-                for (int i = 0; i < 100; i++) 
+                for (int i = 0; i < 100; i++)
                 {
                     for (int j = 0; j < 100; j++)
                     {
@@ -61,13 +66,13 @@ namespace MyWorkCam
                 if (saveIt)
                 {
                     // Save the screenshot to the specified path that the user has chosen.
-                    var centerFolderName = Environment.CurrentDirectory;
+                    var rootFolderName = settings.saveFolder;
                     var currTime = DateTime.Now;
                     var folderName = currTime.ToString("yyyy-MM-dd");
                     var fileNamePostfix = currTime.ToString("HH-mm-ss");
                     var fileName = $"Screenshot-{fileNamePostfix}.png";
-                    var savePath = Path.Combine(centerFolderName, folderName, fileName);
-                    var saveFolder = Path.Combine(centerFolderName, folderName);
+                    var savePath = Path.Combine(rootFolderName, folderName, fileName);
+                    var saveFolder = Path.Combine(rootFolderName, folderName);
                     if (!Directory.Exists(saveFolder))
                     {
                         Directory.CreateDirectory(saveFolder);
@@ -80,6 +85,11 @@ namespace MyWorkCam
             {
             }
 
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace MyWorkCam
         private NotifyIcon trayIcon;
         private ContextMenu trayMenu;
 
-        MainForm f = new MainForm();
+        SettingsForm f = new SettingsForm();
         AboutForm aboutForm = new AboutForm();
 
 
