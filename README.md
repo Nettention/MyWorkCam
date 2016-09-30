@@ -12,10 +12,12 @@ Don't worry. MyWorkCam never sends your files to others.
 Your screen shot is stored in separated folder daily. For example, 
 
 ```
-John/Documents/MyWorkCam screenshots/2016-10-01/Screenshot-23-49-01.png
-John/Documents/MyWorkCam screenshots/2016-10-01/Screenshot-23-59-01.png
-John/Documents/MyWorkCam screenshots/2016-10-02/Screenshot-00-09-01.png
-John/Documents/MyWorkCam screenshots/2016-10-02/Screenshot-00-19-01.png
+John/Documents/MyWorkCam screenshots/2016-10-01
+    Screenshot-23-49-01.png
+    Screenshot-23-59-01.png
+John/Documents/MyWorkCam screenshots/2016-10-02
+    Screenshot-00-09-01.png
+    Screenshot-00-19-01.png
 ```
 So you can see the grouped screen shots day by day.
 
