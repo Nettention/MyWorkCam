@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -8,9 +9,10 @@ using System.Windows.Forms;
 // code based on https://alanbondo.wordpress.com/2008/06/22/creating-a-system-tray-app-with-c/ 
 namespace MyWorkCam
 {
+
     public class SysTrayApp : Form
     {
-        // you set this to true for shortening screen capture period
+        // you temporarily set this to true for shortening screen capture period.
         public bool fasterDebugMode = false; 
 
         private NotifyIcon trayIcon;
@@ -20,11 +22,28 @@ namespace MyWorkCam
         AboutForm aboutForm;
         static public SysTrayApp singleton;
 
+        // for periodically capturing work
         System.Threading.Timer timer;
+
         public SysTrayApp()
         {
             singleton = this;
 
+            InitTrayApp();
+
+            settingsForm = new SettingsForm();
+            aboutForm = new AboutForm();
+
+            LoadConfig();
+
+            InitTimer();
+
+            SystemEvents.SessionSwitch += SystemEvents_SessionSwitch;
+        }
+
+
+        private void InitTrayApp()
+        {
             // Create a simple tray menu with only one item.
             trayMenu = new ContextMenu();
             trayMenu.MenuItems.Add("Settings", OnSettings);
@@ -42,13 +61,6 @@ namespace MyWorkCam
             // Add menu to tray icon and show it.
             trayIcon.ContextMenu = trayMenu;
             trayIcon.Visible = true;
-
-            settingsForm = new SettingsForm();
-            aboutForm = new AboutForm();
-
-            LoadConfig();
-
-            InitTimer();
         }
 
         // captures screen if time to capture comes now.
@@ -65,6 +77,7 @@ namespace MyWorkCam
             }
         }
 
+        // as its name say.
         DateTime timeToCapture = DateTime.Now;
 
         protected override void OnLoad(EventArgs e)
@@ -77,6 +90,7 @@ namespace MyWorkCam
 
         private void OnExit(object sender, EventArgs e)
         {
+            SystemEvents.SessionSwitch -= SystemEvents_SessionSwitch;
             Application.Exit();
         }
 
@@ -112,6 +126,9 @@ namespace MyWorkCam
 
             try
             {
+                if (sessionLocked)
+                    return;
+
                 // written based on the code at http://stackoverflow.com/questions/362986/capture-the-screen-into-a-bitmap
 
                 //Create a new bitmap.
@@ -212,6 +229,23 @@ namespace MyWorkCam
 
             }
         }
+
+        // code based on https://social.msdn.microsoft.com/Forums/vstudio/en-US/45649a15-f60f-41ea-a51b-49e139c74de9/how-do-i-check-if-the-current-desktop-is-locked?forum=csharpgeneral
+        public void SystemEvents_SessionSwitch(object sender, SessionSwitchEventArgs e)
+        {
+            if (e.Reason == SessionSwitchReason.SessionLock)
+            {
+                // Do what you need to here as the system is locked
+                sessionLocked = true;
+            }
+            else
+            {
+                sessionLocked = false;
+            }
+        }
+
+        // desktop is locked?
+        bool sessionLocked = false;
 
     }
 }
