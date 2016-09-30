@@ -46,20 +46,9 @@ namespace MyWorkCam
             f = new SettingsForm();
             aboutForm = new AboutForm();
 
-            // start timer for periodic screen capture
-            timer = new System.Threading.Timer((o) =>
-            {
-                // let's do it in main thread.
-                BeginInvoke(new Action(() =>
-                {
-                    CaptureIfTimeMatches();
-                }));
-            });
+            LoadConfig();
 
-            if (fasterDebugMode)
-                timer.Change(0, 1000);
-            else
-                timer.Change(0, settings.saveIntervalMinutes * 60 * 1000);
+            InitTimer();
         }
 
         // captures screen if time to capture comes now.
@@ -192,5 +181,37 @@ namespace MyWorkCam
         }
 
         public Settings settings = new Settings();
+
+
+        void InitTimer()
+        {
+            // start timer for periodic screen capture
+            timer = new System.Threading.Timer((o) =>
+            {
+                // let's do it in main thread.
+                BeginInvoke(new Action(() =>
+                {
+                    CaptureIfTimeMatches();
+                }));
+            });
+
+            if (fasterDebugMode)
+                timer.Change(0, 1000);
+            else
+                timer.Change(0, settings.saveIntervalMinutes * 60 * 1000);
+        }
+
+        private void LoadConfig()
+        {
+            try
+            {
+
+            }
+            finally
+            {
+
+            }
+        }
+
     }
 }
