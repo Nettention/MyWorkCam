@@ -1,11 +1,11 @@
-# MyWorkCam
+# My Work Cam
 
 Do you forget what you have worked today or yesterday? Don't do it anymore.
 
-MyWorkCam periodically captures your desktop images and stores them to your folder. 
+My Work Cam periodically captures your desktop images and stores them to your folder. 
 You can recall what you have worked today or days ago by reviewing your screen shots.
 
-Don't worry. MyWorkCam never sends your files to others.
+Don't worry. My Work Cam never sends your files to others.
 
 # Why this is better for recalling your works
 
@@ -29,7 +29,7 @@ Install the latest version of .Net Framework.
 
 [Download](https://github.com/Nettention/MyWorkCam/releases/download/0.92/MyWorkCam.zip) and unzip the file.
 
-Run MyWorkCam.exe and find the tray icon, then right click on it and update your preferences.
+Run `MyWorkCam.exe` and find the tray icon, then right click on it and update your preferences.
 ![](https://github.com/Nettention/MyWorkCam/blob/master/doc/tray.png)
 
 Open the screen shot folder you have specified and recall what you have done so far. Delete them after checking them out, if you wish.
