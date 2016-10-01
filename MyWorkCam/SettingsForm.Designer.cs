@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.captureButton = new System.Windows.Forms.Button();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.closeButton = new System.Windows.Forms.Button();
@@ -36,7 +37,8 @@
             // 
             // captureButton
             // 
-            this.captureButton.Location = new System.Drawing.Point(120, 248);
+            this.captureButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.captureButton.Location = new System.Drawing.Point(177, 290);
             this.captureButton.Name = "captureButton";
             this.captureButton.Size = new System.Drawing.Size(130, 48);
             this.captureButton.TabIndex = 0;
@@ -46,14 +48,18 @@
             // 
             // propertyGrid1
             // 
+            this.propertyGrid1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.propertyGrid1.Location = new System.Drawing.Point(12, 12);
             this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(377, 230);
+            this.propertyGrid1.Size = new System.Drawing.Size(431, 272);
             this.propertyGrid1.TabIndex = 1;
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(259, 248);
+            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeButton.Location = new System.Drawing.Point(313, 290);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(130, 48);
             this.closeButton.TabIndex = 2;
@@ -63,8 +69,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 317);
+            this.label1.Location = new System.Drawing.Point(255, 353);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(189, 12);
             this.label1.TabIndex = 3;
@@ -74,11 +81,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 360);
+            this.ClientSize = new System.Drawing.Size(465, 374);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.propertyGrid1);
             this.Controls.Add(this.captureButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingsForm";
             this.Text = "Settings";
             this.ResumeLayout(false);

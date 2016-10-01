@@ -54,7 +54,7 @@ namespace MyWorkCam
             // standard system icon for simplicity, but you
             // can of course use your own custom icon too.
             trayIcon = new NotifyIcon();
-            trayIcon.Text = "MyTrayApp";
+            trayIcon.Text = "My Work Cam";
             Icon appIcon = Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
             trayIcon.Icon = new Icon(appIcon, 40, 40);
 

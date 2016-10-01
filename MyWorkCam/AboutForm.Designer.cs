@@ -75,7 +75,9 @@
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox1.Size = new System.Drawing.Size(426, 284);
             this.textBox1.TabIndex = 3;
-            this.textBox1.Text = resources.GetString("textBox1.Text");
+            this.textBox1.Text = "Copyright Nettention Inc.\r\n\r\nUse this app for finding out what have you done in y" +
+    "our workplace.\r\n\r\nFor details, check out the web site.\r\nhttps://github.com/Nette" +
+    "ntion/MyWorkCam";
             // 
             // AboutForm
             // 
@@ -86,6 +88,9 @@
             this.Controls.Add(this.proudNetLink);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.closeButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "AboutForm";
             this.Text = "My Work Cam";
             this.Load += new System.EventHandler(this.AboutForm_Load);
