@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MyWorkCam")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("My Work Cam")]
+[assembly: AssemblyDescription("Periodic screenshot capturer for recalling what you have worked.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MyWorkCam")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCompany("Nettention")]
+[assembly: AssemblyProduct("My Work Cam")]
+[assembly: AssemblyCopyright("Copyright © 2016 Nettention Inc.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
