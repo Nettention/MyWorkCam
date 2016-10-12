@@ -55,4 +55,5 @@ Check the website out http://www.proudnet.com for details.
 
 # License
 
+Copyright Nettention Inc.
 LGPL.
