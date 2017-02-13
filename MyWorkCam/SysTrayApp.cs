@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Reflection;
@@ -174,10 +175,26 @@ namespace MyWorkCam
                     var fileName = $"Screenshot-{fileNamePostfix}.png";
                     var savePath = Path.Combine(rootFolderName, folderName, fileName);
                     var saveFolder = Path.Combine(rootFolderName, folderName);
+                    bool isFirst = false;
                     if (!Directory.Exists(saveFolder))
                     {
                         Directory.CreateDirectory(saveFolder);
+                        isFirst = true;
                     }
+                                        
+                    // For user's convenience, we add "Today's first shot" to the image if it is the first screenshot.
+                    if (isFirst)
+                    {
+                        var g = gfxScreenshot;
+
+                        RectangleF rectf = new RectangleF(0, 0, 600, 70);
+
+                        g.SmoothingMode = SmoothingMode.AntiAlias;
+                        g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                        g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                        g.DrawString("Today's first shot", new Font("Tahoma", 40), Brushes.Red, rectf);
+                    }
+
                     bmpScreenshot.Save(savePath, ImageFormat.Png);
                 }
 
